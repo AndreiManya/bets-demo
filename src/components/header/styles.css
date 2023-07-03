@@ -1,0 +1,41 @@
+.header {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: auto;
+  min-height: 940px;
+  position: relative;
+  color: #107133ba;
+  background-image: url('../../accets/banner/stadium.png');
+}
+
+.banner {
+  width: 100%;
+  max-width: 450px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.banner__title {
+  text-align: center;
+  font-family: fantasy;
+  letter-spacing: 16px;
+  -webkit-text-stroke: 1px black;
+  font-size: 80px;
+}
+
+@media screen and (max-width: 1200px) {
+  .header {
+    min-height: 500px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .header {
+    min-height: 300px;
+  }
+  .banner__title {
+    font-size: 50px;
+  }
+}

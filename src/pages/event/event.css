@@ -3,15 +3,25 @@
   max-width: 1200px;
   display: flex;
   flex-direction: column;
+  margin: auto;
   font-size: 32px;
   padding: 0 20px 50px 20px;
+  text-align: center;
 }
 .selected__back {
-  margin: 40px 20px;
-  width: 200px;
+  margin: 40px 0 20px 0;
+  width: 100px;
+}
+.selected__text {
+  font-family: monospace;
+  background-color: aqua;
+  margin: 0;
+  padding: 10px 0;
 }
 .selected__title {
   font-size: 0.8em;
-  text-align: center;
   font-family: monospace;
+  background-color: rgb(65, 232, 65);
+  margin: 20px 0;
+  padding: 10px 0;
 }

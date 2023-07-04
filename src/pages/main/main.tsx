@@ -4,12 +4,12 @@ import Item from '../../components/item'
 import './main.css'
 import { iItem } from '@/interfaces/item'
 
-const list = [
+export const list = [
   {
     id: 1,
     comandA: 'Arsenal',
     comandB: 'Manchester City',
-    date: '04/07/2023',
+    date: '10/07/2023',
     win: 2,
     lose: 1.5,
     draw: 3,
@@ -19,57 +19,57 @@ const list = [
     id: 2,
     comandA: 'Barcelona',
     comandB: 'Manchester united',
-    date: '05/07/2023',
+    date: '16/07/2023',
     win: 2,
     lose: 1.5,
     draw: 3,
-    time: '17:00',
+    time: '22:00',
   },
   {
     id: 3,
     comandA: 'Paris',
     comandB: 'Manchester united',
-    date: '05/07/2023',
+    date: '16/09/2023',
     win: 3,
     lose: 2,
     draw: 5,
-    time: '17:00',
+    time: '21:00',
   },
   {
     id: 4,
     comandA: 'Arsenal',
     comandB: 'Manchester City',
-    date: '04/07/2023',
+    date: '20/11/2023',
     win: 2,
     lose: 1.5,
     draw: 3,
-    time: '17:00',
+    time: '16:00',
   },
   {
     id: 5,
     comandA: 'Barcelona',
     comandB: 'Manchester united',
-    date: '05/07/2023',
+    date: '15/07/2023',
     win: 2,
     lose: 1.5,
     draw: 3,
-    time: '17:00',
+    time: '15:00',
   },
   {
     id: 6,
     comandA: 'Paris',
     comandB: 'Manchester united',
-    date: '05/07/2023',
+    date: '05/04/2023',
     win: 3,
     lose: 2,
     draw: 5,
-    time: '17:00',
+    time: '19:00',
   },
   {
     id: 7,
     comandA: 'Arsenal',
     comandB: 'Manchester City',
-    date: '04/07/2023',
+    date: '29/12/2023',
     win: 2,
     lose: 1.5,
     draw: 3,
@@ -79,51 +79,51 @@ const list = [
     id: 8,
     comandA: 'Barcelona',
     comandB: 'Manchester united',
-    date: '05/07/2023',
+    date: '23/07/2023',
     win: 2,
     lose: 1.5,
     draw: 3,
-    time: '17:00',
+    time: '08:00',
   },
   {
     id: 9,
     comandA: 'Paris',
     comandB: 'Manchester united',
-    date: '05/07/2023',
+    date: '09/09/2023',
     win: 3,
     lose: 2,
     draw: 5,
-    time: '17:00',
+    time: '9:00',
   },
   {
     id: 10,
     comandA: 'Arsenal',
     comandB: 'Manchester City',
-    date: '04/07/2023',
+    date: '09/10/2023',
     win: 2,
     lose: 1.5,
     draw: 3,
-    time: '17:00',
+    time: '12:00',
   },
   {
     id: 11,
     comandA: 'Barcelona',
     comandB: 'Manchester united',
-    date: '05/07/2023',
+    date: '15/08/2023',
     win: 2,
     lose: 1.5,
     draw: 3,
-    time: '17:00',
+    time: '20:00',
   },
   {
     id: 12,
     comandA: 'Paris',
     comandB: 'Manchester united',
-    date: '05/07/2023',
+    date: '22/12/2023',
     win: 3,
     lose: 2,
     draw: 5,
-    time: '17:00',
+    time: '13:00',
   },
 ]
 
@@ -153,19 +153,26 @@ const Main: FC = () => {
           </div>
         </div>
         <div className="events">
-          {data?.map((e, i) => (
-            <Item
-              key={i}
-              id={e.id}
-              comandA={e.comandA}
-              comandB={e.comandB}
-              date={e.date}
-              win={e.win}
-              lose={e.lose}
-              draw={e.draw}
-              time={e.time}
-            />
-          ))}
+          {data
+            ?.sort(
+              (a, b) =>
+                +new Date(b.date?.split('/').reverse().join('/')) -
+                +new Date(a.date?.split('/').reverse().join('/')),
+            )
+            ?.reverse()
+            ?.map((e, i) => (
+              <Item
+                key={i}
+                id={e.id}
+                comandA={e.comandA}
+                comandB={e.comandB}
+                date={e.date}
+                win={e.win}
+                lose={e.lose}
+                draw={e.draw}
+                time={e.time}
+              />
+            ))}
         </div>
       </div>
     </>

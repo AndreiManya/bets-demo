@@ -1,4 +1,4 @@
-import React, { FC, useContext } from 'react'
+import React, { FC } from 'react'
 import './styles.css'
 import { iItem } from '../../interfaces/item'
 import { useNavigate } from 'react-router-dom'

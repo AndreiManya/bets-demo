@@ -1,0 +1,17 @@
+.selected {
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  flex-direction: column;
+  font-size: 32px;
+  padding: 0 20px 50px 20px;
+}
+.selected__back {
+  margin: 40px 20px;
+  width: 200px;
+}
+.selected__title {
+  font-size: 0.8em;
+  text-align: center;
+  font-family: monospace;
+}

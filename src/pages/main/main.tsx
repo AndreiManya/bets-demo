@@ -1,11 +1,12 @@
-import React, { FC, useState, useEffect } from 'react'
+import React, { FC, useState, useEffect, useContext } from 'react'
 import Header from '../../components/header'
 import Item from '../../components/item'
 import './main.css'
-import { iItem } from '@/components/interfaces/item'
+import { iItem } from '@/interfaces/item'
 
 const list = [
   {
+    id: 1,
     comandA: 'Arsenal',
     comandB: 'Manchester City',
     date: '04/07/2023',
@@ -15,6 +16,7 @@ const list = [
     time: '17:00',
   },
   {
+    id: 2,
     comandA: 'Barcelona',
     comandB: 'Manchester united',
     date: '05/07/2023',
@@ -24,6 +26,7 @@ const list = [
     time: '17:00',
   },
   {
+    id: 3,
     comandA: 'Paris',
     comandB: 'Manchester united',
     date: '05/07/2023',
@@ -33,6 +36,7 @@ const list = [
     time: '17:00',
   },
   {
+    id: 4,
     comandA: 'Arsenal',
     comandB: 'Manchester City',
     date: '04/07/2023',
@@ -42,6 +46,7 @@ const list = [
     time: '17:00',
   },
   {
+    id: 5,
     comandA: 'Barcelona',
     comandB: 'Manchester united',
     date: '05/07/2023',
@@ -51,6 +56,7 @@ const list = [
     time: '17:00',
   },
   {
+    id: 6,
     comandA: 'Paris',
     comandB: 'Manchester united',
     date: '05/07/2023',
@@ -60,6 +66,7 @@ const list = [
     time: '17:00',
   },
   {
+    id: 7,
     comandA: 'Arsenal',
     comandB: 'Manchester City',
     date: '04/07/2023',
@@ -69,6 +76,7 @@ const list = [
     time: '17:00',
   },
   {
+    id: 8,
     comandA: 'Barcelona',
     comandB: 'Manchester united',
     date: '05/07/2023',
@@ -78,6 +86,7 @@ const list = [
     time: '17:00',
   },
   {
+    id: 9,
     comandA: 'Paris',
     comandB: 'Manchester united',
     date: '05/07/2023',
@@ -87,6 +96,7 @@ const list = [
     time: '17:00',
   },
   {
+    id: 10,
     comandA: 'Arsenal',
     comandB: 'Manchester City',
     date: '04/07/2023',
@@ -96,6 +106,7 @@ const list = [
     time: '17:00',
   },
   {
+    id: 11,
     comandA: 'Barcelona',
     comandB: 'Manchester united',
     date: '05/07/2023',
@@ -105,6 +116,7 @@ const list = [
     time: '17:00',
   },
   {
+    id: 12,
     comandA: 'Paris',
     comandB: 'Manchester united',
     date: '05/07/2023',
@@ -129,7 +141,7 @@ const Main: FC = () => {
   return (
     <>
       <Header />
-      <main className="content">
+      <div className="content">
         <p className="content__label">Top events</p>
         <div className="content-header">
           <div className="content-header__date">Date</div>
@@ -144,6 +156,7 @@ const Main: FC = () => {
           {data?.map((e, i) => (
             <Item
               key={i}
+              id={e.id}
               comandA={e.comandA}
               comandB={e.comandB}
               date={e.date}
@@ -154,7 +167,7 @@ const Main: FC = () => {
             />
           ))}
         </div>
-      </main>
+      </div>
     </>
   )
 }

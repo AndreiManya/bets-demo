@@ -1,4 +1,5 @@
 export interface iItem {
+  id: number
   comandA: string
   comandB: string
   date: string

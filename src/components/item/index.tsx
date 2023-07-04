@@ -1,10 +1,30 @@
-import React, { FC } from 'react'
+import React, { FC, useContext } from 'react'
 import './styles.css'
-import { iItem } from '../interfaces/item'
+import { iItem } from '../../interfaces/item'
+import { EventContext } from '../../App'
+import { useNavigate } from 'react-router-dom'
+import { EVENT_ROUTE } from '../../routes'
 
-const Item: FC<iItem> = ({ comandA, comandB, date, win, lose, draw, time }) => {
+const Item: FC<iItem> = ({ id, comandA, comandB, date, win, lose, draw, time }) => {
+  const { event, setEvent } = useContext(EventContext)
+  const navigate = useNavigate()
+  const handleEvent = () => {
+    setEvent({
+      ...event,
+      id,
+      comandA,
+      comandB,
+      date,
+      win,
+      lose,
+      draw,
+      time,
+    })
+    navigate(`${EVENT_ROUTE}/${id}`)
+  }
+
   return (
-    <div className="item">
+    <div className="item" onClick={handleEvent}>
       <div className="info">
         <span className="info__time">{time}</span>
         <span className="info__date">{date}</span>

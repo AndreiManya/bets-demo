@@ -1,4 +1,4 @@
-import React, { FC, useState, useEffect, useContext } from 'react'
+import React, { FC, useState, useEffect } from 'react'
 import Header from '../../components/header'
 import Item from '../../components/item'
 import './main.css'
@@ -132,10 +132,13 @@ const Main: FC = () => {
   const [loading, setLoading] = useState(false)
 
   useEffect(() => {
-    setTimeout(() => {
+    const requestMock = setTimeout(() => {
       setData(list)
       setLoading(false)
     }, 2000)
+    return () => {
+      clearTimeout(requestMock)
+    }
   }, [])
 
   return (

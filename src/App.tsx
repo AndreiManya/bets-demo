@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react'
+import React, { FC } from 'react'
 import './app.css'
 import Main from './pages/main/main'
 
-const App = () => {
+const App: FC = () => {
   return (
     <div className="root">
       <Main />

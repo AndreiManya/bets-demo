@@ -1,7 +1,8 @@
-import React, { useState, useEffect } from 'react'
+import React, { FC, useState, useEffect } from 'react'
 import Header from '../../components/header'
 import Item from '../../components/item'
 import './main.css'
+import { iItem } from '@/components/interfaces/item'
 
 const list = [
   {
@@ -114,8 +115,8 @@ const list = [
   },
 ]
 
-const Main = () => {
-  const [data, setData] = useState([])
+const Main: FC = () => {
+  const [data, setData] = useState<iItem[]>([])
   const [loading, setLoading] = useState(false)
 
   useEffect(() => {

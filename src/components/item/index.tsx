@@ -1,7 +1,8 @@
-import React, { useState } from 'react'
+import React, { FC } from 'react'
 import './styles.css'
+import { iItem } from '../interfaces/item'
 
-const Item = ({ comandA, comandB, date, win, lose, draw, time }) => {
+const Item: FC<iItem> = ({ comandA, comandB, date, win, lose, draw, time }) => {
   return (
     <div className="item">
       <div className="info">

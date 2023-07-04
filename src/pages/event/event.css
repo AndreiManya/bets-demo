@@ -8,6 +8,13 @@
   padding: 0 20px 50px 20px;
   text-align: center;
 }
+.button {
+  padding: 10px 20px;
+  border-radius: 30px;
+  border: 2px solid black;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
 .selected__back {
   margin: 40px 0 20px 0;
   width: 100px;
@@ -24,4 +31,37 @@
   background-color: rgb(65, 232, 65);
   margin: 20px 0;
   padding: 10px 0;
+}
+.selected__bet-wrapper {
+  max-width: 800px;
+  width: 100%;
+  padding: 30px;
+  display: flex;
+  justify-content: space-between;
+  margin: auto;
+}
+.bet-item {
+  display: flex;
+  flex-direction: column;
+  background-color: goldenrod;
+  padding: 20px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+.bet-item.active {
+  background-color: rgb(32, 218, 94);
+}
+.selected__bet-button {
+  width: 300px;
+  background-color: rgb(112, 236, 153);
+  margin: 50px auto;
+}
+.selected__bet-button:hover {
+  background-color: rgb(156, 250, 187);
+}
+.selected__bet-button.disabled {
+  background-color: rgb(145, 145, 142);
+}
+.selected__bet-button.disabled:hover {
+  background-color: rgb(145, 145, 142);
 }

@@ -2,7 +2,8 @@ import React, { FC, useState, useEffect } from 'react'
 import Header from '../../components/header'
 import Item from '../../components/item'
 import './main.css'
-import { iItem } from '@/interfaces/item'
+import { iItem } from '../../interfaces/item'
+import Spinner from '../../components/spinner/spinner'
 
 export const list = [
   {
@@ -129,7 +130,7 @@ export const list = [
 
 const Main: FC = () => {
   const [data, setData] = useState<iItem[]>([])
-  const [loading, setLoading] = useState(false)
+  const [loading, setLoading] = useState(true)
 
   useEffect(() => {
     const requestMock = setTimeout(() => {
@@ -178,6 +179,7 @@ const Main: FC = () => {
             ))}
         </div>
       </div>
+      {loading && <Spinner />}
     </>
   )
 }
